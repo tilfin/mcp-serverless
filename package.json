@@ -1,0 +1,37 @@
+{
+  "name": "@tilfin/mcp-serverless",
+  "version": "0.1.0",
+  "description": "Serverless implementation of the Model Context Protocol (MCP) for building AI applications",
+  "author": "Toshimitsu Takahashi",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "module": "./dist/index.js",
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    }
+  },
+  "files": ["./dist/**/*.js"],
+  "scripts": {
+    "ts:check": "tsc --noEmit",
+    "build": "tsc --project tsconfig.build.json",
+    "check": "biome check --write ./src ./test *.json",
+    "test": "node --import tsx --test test/*.test.ts"
+  },
+  "keywords": ["modelcontextprotocol", "mcp", "serverless"],
+  "type": "module",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.6.1",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@types/node": "^22.13.9",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2"
+  }
+}
